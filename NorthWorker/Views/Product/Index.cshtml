@@ -1,0 +1,12 @@
+﻿@model IEnumerable<NorthWorker.Models.Product>
+
+@foreach (var p in Model)
+{
+    <tr>
+        <td>@p.ProductId</td>
+        <td>
+            @Html.ActionLink(p.ProductName, "Details", "Product", new { id = p.ProductId })
+        </td>
+    </tr>
+    <br/>
+}
