@@ -1,12 +1,28 @@
 ﻿@model IEnumerable<NorthWorker.Models.Product>
 
-@foreach (var p in Model)
-{
-    <tr>
-        <td>@p.ProductId</td>
-        <td>
-            @Html.ActionLink(p.ProductName, "Details", "Product", new { id = p.ProductId })
-        </td>
-    </tr>
-    <br/>
-}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Product List</h2>
+    <a asp-controller="Product" asp-action="Create" class="btn btn-success">
+        <i class="bi bi-plus-lg"></i> Add New Product
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ProductId</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@p.ProductId"> @p.ProductName </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
