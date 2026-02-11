@@ -24,23 +24,23 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label asp-for="CategoryName" class="form-label font-weight-bold">Category</label>
-                                    <select asp-for="CategoryName"
-                                            asp-items="@(new SelectList(ViewBag.CategoryList, "Value", "Text"))"
+                                    <label asp-for="CategoryId" class="form-label font-weight-bold">Category</label>
+                                    <select asp-for="CategoryId"
+                                            asp-items="@(new SelectList(@Model.Categories, "Value", "Text"))"
                                             class="form-select">
                                         <option value="">-- Select Category --</option>
                                     </select>
-                                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                                    <span asp-validation-for="CategoryId" class="text-danger"></span>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label asp-for="SupplierName" class="form-label font-weight-bold">Supplier</label>
-                                    <select asp-for="SupplierName"
-                                            asp-items="@(new SelectList(ViewBag.SupplierList, "Value", "Text"))"
+                                    <label asp-for="SupplierId" class="form-label font-weight-bold">Supplier</label>
+                                    <select asp-for="SupplierId"
+                                            asp-items="@(new SelectList(@Model.Suppliers, "Value", "Text"))"
                                             class="form-select">
                                         <option value="">-- Select Supplier --</option>
                                     </select>
-                                    <span asp-validation-for="SupplierName" class="text-danger"></span>
+                                    <span asp-validation-for="SupplierId" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
